@@ -1,6 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
 <div id="app">
+    <button @click="changeTitle"> Chnage title </button>
     <p>{{ title }}</p>
 </div>
 
@@ -8,7 +9,12 @@
     new Vue({
             el: '#app',
             data: {
-                title: 'Hello World!!!'
+                title: 'Hello wwww'
+            },
+            methods: {
+                changeTitle() {
+                    this.title = 'New title'
+                }
             }
         });
 </script>
