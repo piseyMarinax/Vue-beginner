@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<div id="app">
+    <button v-on:click="show = !show">Show / hide</button>
+    <p v-if="show">Im part time visible</p>
+    <p v-else>Am i visible</p>
+    <p v-show="show">MEMEME</p>
+
+    <hr>
+
+    <ul>
+        <li v-for="(person,index) in persons"> {{ person.name }} {{ index }}</li>
+    </ul>
+
+</div>
+
+<script>
+   new Vue({
+        el: '#app',
+        data: {
+            show: true,
+            persons: [
+                { name: "GG1", age: "22" },
+                { name: "GG2", age: "22" },
+                { name: "GG3", age: "22" },
+            ]
+        }
+    });
+</script>
