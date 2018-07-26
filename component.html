@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ title }} </p>
+
+    <hr>
+
+    <app-user></app-user>
+    <app-user></app-user>
+</div>
+
+
+<script>
+
+    Vue.component('app-user',
+        {
+            data: function(){
+                return {
+                    users:[
+                        {username: 'max'},
+                        {username: 'max1'},
+                        {username: 'max2'}
+                    ]
+                };
+            },
+            template: '<div><div class="user" v-for="user in users">{{ user.username }}</div></div>'
+        });
+    new Vue({
+        el: "#app",
+        data: {
+
+            title: 'Hello'
+        }
+    })
+</script>
+
+<style>
+    .user{
+        border: 1px solid #ccc;
+        background-color: white;
+        padding: 10px;
+    }
+</style>
