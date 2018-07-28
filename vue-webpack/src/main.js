@@ -11,7 +11,7 @@ Vue.component('app-message',Message);
 Vue.use(VueRouter);
 
 const routes= [
-    { path: '/users', component: Users },
+    { path: '/users/:teamID', component: Users },
     { path: '/', component: Home }
 ]
 
