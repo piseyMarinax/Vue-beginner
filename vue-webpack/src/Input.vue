@@ -1,6 +1,7 @@
 <template>
     <div>
-        <input type="text" name="" id="" v-model="message">
+        <p>{{ msg }}</p>
+        <input type="text" :value="msg"  @input="changeMessage">
         <p>{{ message }}</p>
     </div>
 </template>
@@ -8,14 +9,17 @@
 <script>
     export default {
         name: "app-input",
+        props:['msg'],
         data() {
             return{
-                message : '123'
+                message : ''
+            }
+        },
+        methods:{
+            changeMessage(event){
+                this.message = event.target.value;
+                this.$emit('messageChanged',this.message);
             }
         }
     }
 </script>
-
-<style scoped>
-
-</style>
